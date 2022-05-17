@@ -1,0 +1,16 @@
+@import "variables";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+      // border: 2px solid red;
+  }
+  
+  body {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lighten($primary,25);
+    transition: 1s;
+   
+  }
+  

@@ -1,0 +1,170 @@
+@import "reset";
+@import "utility";
+@import "mixin";
+
+.head{
+  transition: 1s;
+}
+
+.wrapper {
+    display: flex;  
+    height: 80vh;
+  position: relative;
+  overflow: hidden;
+  // background-color: red;
+  .left-box {
+    background-color: $accent;
+    // height: 100%;
+    // overflow: hidden;
+    h1 {
+      font-size: 5vw;
+      color: white;  
+    }
+    span {
+      font-size: 1.5rem;
+      color: white;
+      gap: 1rem;
+    }
+    p {
+      font-size: 2vw;
+      color: white;
+      &::first-line {
+        font-weight: 800;
+        line-height: 50px;
+        
+      }
+      
+    }
+  }
+  .right-box {
+    background-color: $primary;
+    overflow: hidden;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    .left-box {
+      @include height-width(100%, 50%);
+    }
+    .right-box {
+      @include height-width(100%, 50%);
+    }
+    .circle {
+      display: none;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    color: lighten($primary,10);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    z-index: 1;
+    text-transform: uppercase;
+    
+  }
+  
+  
+  @media (max-width: 576px) {
+    .sm-img {
+      height: 70%;
+      margin-top: auto;
+    }
+  }
+}
+  
+  .black-box {
+    background-color: $dark;
+    height: 10vh;
+    width: 100%;
+    overflow: hidden;
+    
+    img {
+      height:5rem;
+    }
+  }
+
+
+.lead{
+  font-size:2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  // transform: scale(1);
+  
+}
+.lead+p{
+  font-size: 1.025rem;
+  flex-basis: 70%;
+  line-height: 2rem;
+}
+.card-group{
+  // background-color: red;
+  // display: flex;
+  gap: 1rem;
+  .card{
+    flex-basis: 33%;
+    background-color:#fff;
+.card-header{
+  i{
+    font-size: 3rem;
+  }
+}
+
+    .body{
+      .card-heading{
+        font-size: 2rem;
+        text-transform: uppercase;
+            border-left: 4px solid $primary;
+        color:darken($primary,10);
+        font-weight: 800;
+
+
+      
+      }
+    }
+  
+  }
+}
+
+.card-heading+p{
+  font-size: 1.025rem;
+  line-height: 1.5rem;
+}
+.panel-group{
+  background-color:#fff;
+  gap: 2rem;
+  .panel{
+    // background-color: red;
+    flex-basis: 50%;
+    img{
+      max-width: 100%;
+    }
+    p{
+      font-size: 1.75rem;
+      font-weight: 700;
+      ~span{
+        font-size: 1.25rem;
+        text-transform: capitalize;      
+        display: inline-block;
+            
+      }
+      // first-child
+      &+span{
+        margin-right: 2rem;
+      }
+      &~span:last-child{
+        margin-left: 2rem;
+      }
+
+    }
+  }
+}
+section{
+  overflow: hidden;
+}
